@@ -1,0 +1,323 @@
+request_id,request_date,cash_balance,inventory_value,response
+1,2025-04-01,49559.7,4905.299999999999,"Subject: Your Paper Supplies Order for the Ceremony
+
+Dear Office Manager,
+
+Thank you for your order for the upcoming ceremony! We are pleased to confirm the following items:
+
+- **A4 paper**: 200 sheets - **Total Price: $10.00**
+- **Cardstock (white)**: 100 sheets - **Total Price: $15.00**
+- **Colored paper (assorted colors)**: 100 sheets - **Total Price: $10.00**
+
+**Subtotal:** $35.00  
+**Bulk discount (5% for ≤500 units):** -$1.75  
+**Total Due:** $33.25  
+
+Your order has been successfully processed, and we expect to deliver your supplies by **April 5, 2025**.
+
+If you have any questions or need further assistance, please feel free to reach out. Thank you for choosing Beaver's Choice Paper Company!
+
+Best regards,  
+[Your Name]  
+Customer Service Orchestrator  
+Beaver's Choice Paper Company"
+2,2025-04-03,49559.7,4905.299999999999,"Dear Hotel Manager,
+
+Thank you for reaching out regarding your order for the parade. Unfortunately, I must inform you that all requested items are currently out of stock:
+
+- Colorful Poster Paper: 0 units available
+- Roll of Streamers: 0 units available
+- Balloons: 0 units available
+
+As a result, we are unable to fulfill your order at this time. We recommend checking back with us later or considering alternative options for your event.
+
+If you have any other questions or need assistance, please feel free to reach out. We appreciate your understanding.
+
+Best regards,  
+[Your Name]  
+Beaver's Choice Paper Company"
+3,2025-04-04,49559.7,4905.299999999999,"Dear School Board Resource Manager,
+
+Thank you for reaching out regarding your upcoming conference. I appreciate your interest in our products.
+
+Unfortunately, we currently have the following items available for your order:
+- **A4 paper**: 72 sheets at a total price of **$3.42** (after a bulk discount).
+
+Regrettably, both **A3 paper** and **printer paper** are out of stock at this time, and we are unable to fulfill those portions of your request.
+
+Your order will be delivered by **April 15, 2025**. If you would like to proceed with the available A4 paper or if you have any other items in mind, please let me know, and I can assist you further.
+
+Thank you for considering Beaver's Choice Paper Company for your conference needs!
+
+Best regards,  
+[Your Name]  
+Customer Service Orchestrator  
+Beaver's Choice Paper Company"
+4,2025-04-05,49805.939999999995,4901.699999999999,"Subject: Your Order Confirmation for the Reception
+
+Dear [Customer's Name],
+
+Thank you for reaching out regarding your reception needs! 
+
+I’m pleased to confirm your order for **72 sheets of A4 paper** at a total price of **$3.42**. This order qualifies for a bulk discount of 5%, which has been applied to your total. 
+
+Your order is scheduled for delivery on **April 6, 2025**. 
+
+Unfortunately, we were unable to fulfill your request for **500 sheets of high-quality recycled cardstock in various colors** as it is currently out of stock. If you would like to explore alternative options or adjust your order, please let me know, and I would be happy to assist you further.
+
+Thank you for choosing Beaver's Choice Paper Company, and we look forward to serving you!
+
+Best regards,
+
+[Your Name]  
+Customer Service Orchestrator  
+Beaver's Choice Paper Company"
+5,2025-04-05,49805.939999999995,4806.7,"Subject: Your Order Confirmation for the Upcoming Party
+
+Dear Teacher,
+
+Thank you for your order for your upcoming party! We're excited to help you with your supplies. Here’s a summary of your order:
+
+**Items Fulfilled:**
+- **Colored Paper**: 500 sheets - Total Price: $50.00
+- **Cardstock**: 300 sheets - Total Price: $45.00
+
+**Subtotal**: $95.00  
+**Bulk Discount (10% for 501–2,000 units)**: -$9.50  
+**Total Due**: $85.50  
+
+Your order will be delivered by **April 9, 2025**.
+
+Unfortunately, the **decorative washi tape** you requested is currently out of stock. If you would like to explore alternative options or need assistance with anything else, please let me know!
+
+Thank you for choosing Beaver's Choice Paper Company. We look forward to serving you!
+
+Best regards,  
+[Your Name]  
+Customer Service Orchestrator  
+Beaver's Choice Paper Company"
+6,2025-04-06,49835.189999999995,4777.45,"Subject: Your Order Confirmation for the Assembly
+
+Dear Teacher,
+
+Thank you for reaching out regarding your supply needs for the upcoming assembly! We are pleased to confirm your order as follows:
+
+- **Cardstock**: 195 sheets at a total price of **$29.25**.
+
+Unfortunately, we were unable to fulfill your request for **500 sheets of colorful construction paper** and **300 sheets of white printer paper**, as the colorful construction paper is currently out of stock, and the white printer paper is also unavailable.
+
+As a reminder, you qualify for a **5% bulk discount** on your order, which has already been applied to your total.
+
+Your order is expected to be delivered by **April 10, 2025**. If you have any further questions or need assistance with additional items, please feel free to reach out.
+
+Thank you for choosing Beaver's Choice Paper Company!
+
+Best regards,
+
+[Your Name]  
+Customer Service Orchestrator  
+Beaver's Choice Paper Company"
+7,2025-04-07,49930.189999999995,4677.45,"Subject: Your Order Confirmation for the Exhibition
+
+Dear Business Owner,
+
+Thank you for your order for the upcoming exhibition! We're pleased to confirm the following items:
+
+- **Glossy paper**: 500 sheets at a total price of **$95.00** (after a 5% bulk discount).
+  
+Unfortunately, we were unable to fulfill your requests for the following items due to stock unavailability:
+- **Matte A3 paper**: 1000 sheets (currently out of stock)
+- **Heavyweight cardstock**: 200 sheets (currently out of stock)
+- **Poster boards (24"" x 36"")**: 300 units (currently out of stock)
+
+Your order for the glossy paper will be delivered by **April 11, 2025**. If you would like to discuss reordering the out-of-stock items or have any other questions, please feel free to reach out.
+
+Thank you for choosing Beaver's Choice Paper Company!
+
+Best regards,
+
+[Your Name]  
+Customer Service Orchestrator  
+Beaver's Choice Paper Company"
+8,2025-04-07,49930.189999999995,4677.45,"Thank you for your inquiry regarding the paper supplies for your upcoming ceremony. 
+
+Unfortunately, I must inform you that all the requested items are currently out of stock:
+
+- A4 glossy paper: 0 units available
+- A4 matte paper: 0 units available
+- A5 colored paper: 0 units available
+- A4 recycled paper: 0 units available
+
+As a result, we are unable to fulfill your order at this time. I recommend checking back with us later or considering alternative products that may be available.
+
+If you have any other questions or need assistance with different items, please feel free to reach out. Thank you for your understanding, and we hope to assist you in the future!"
+9,2025-04-07,50167.689999999995,4672.45,"Subject: Your Order Confirmation for the Reception
+
+Dear City Hall Clerk,
+
+Thank you for your order for the reception! We are pleased to confirm the following items:
+
+- **Kraft paper**: 50 units at a total price of **$4.75**.
+
+As you ordered 50 units, you qualify for a 5% bulk discount, bringing your total down from $5.00 to $4.75.
+
+Your order is scheduled for delivery on **April 8, 2025**.
+
+Unfortunately, we were unable to fulfill your requests for the A4 white printer paper and A3 glossy paper, as both items are currently out of stock. If you have any alternative items in mind or need further assistance, please let us know!
+
+Thank you for choosing Beaver's Choice Paper Company. We look forward to serving you again!
+
+Best regards,
+
+[Your Name]  
+Customer Service Orchestrator  
+Beaver's Choice Paper Company"
+13,2025-04-08,50167.689999999995,4672.45,"Thank you for your request regarding the supplies for your upcoming gathering. Unfortunately, I must inform you that both **A4 printing paper** and **cardstock** are currently out of stock, and therefore, we are unable to fulfill your order at this time.
+
+If you have any alternative items in mind or if you would like assistance with something else, please let me know. I'm here to help!"
+12,2025-04-08,50167.689999999995,4672.45,"Dear City Hall Clerk,
+
+Thank you for reaching out regarding your upcoming party. Unfortunately, I must inform you that all the requested items are currently out of stock:
+
+- **Colorful Cardstock**: 200 sheets (OUT OF STOCK)
+- **Standard Printer Paper**: 500 sheets (OUT OF STOCK)
+- **Paper Napkins**: 100 sheets (OUT OF STOCK)
+
+As a result, we are unable to fulfill your order at this time. I recommend checking back with us later or considering alternative options for your supplies.
+
+If you have any other questions or need assistance with different items, please feel free to reach out.
+
+Best regards,  
+[Your Name]  
+Beaver's Choice Paper Company"
+10,2025-04-08,51597.799999999996,4655.049999999999,"Subject: Order Confirmation for Your Upcoming Show
+
+Dear Business Owner,
+
+Thank you for choosing Beaver's Choice Paper Company for your upcoming show! We are pleased to confirm your order.
+
+**Items Fulfilled:**
+- **Glossy paper**: 87 sheets
+- **Total Price**: $16.53
+
+Since your order was below the bulk discount threshold, you received a 5% discount on the subtotal. 
+
+**Expected Delivery Date:** Your order is scheduled to be delivered by **April 9, 2025**.
+
+Unfortunately, we were unable to fulfill your request for **sturdy cardstock** as it is currently out of stock. If you would like to explore alternative options or need assistance with anything else, please let us know.
+
+Thank you for your understanding, and we look forward to serving you!
+
+Best regards,
+
+[Your Name]  
+Customer Service Orchestrator  
+Beaver's Choice Paper Company"
+11,2025-04-08,51597.799999999996,4655.049999999999,"Thank you for your request regarding the order for your exhibition. Unfortunately, I must inform you that both **A3 glossy paper** and **A4 matte paper** are currently out of stock, with no units available.
+
+As a result, I am unable to generate a quote or process a sale for these items at this time. If you have alternative products in mind or if you would like to explore other options, please let me know, and I would be happy to assist you further.
+
+Thank you for your understanding, and I look forward to helping you with your needs!"
+14,2025-04-09,51597.799999999996,4655.049999999999,"Dear City Hall Clerk,
+
+Thank you for reaching out regarding your order for high-quality paper supplies for the upcoming performance. Unfortunately, I must inform you that all the requested items are currently out of stock:
+
+- **A4 paper**: 0 units available
+- **Poster paper in various colors**: 0 units available
+- **Cardstock**: 0 units available
+
+As a result, we are unable to fulfill your order at this time. We recommend checking back with us later or considering alternative products that may be available.
+
+If you have any other questions or need assistance with different items, please feel free to reach out. We appreciate your understanding and look forward to serving you in the future.
+
+Best regards,
+
+[Your Name]  
+Customer Service Orchestrator  
+Beaver's Choice Paper Company"
+15,2025-04-12,51497.799999999996,4755.049999999999,"Thank you for your request for high-quality paper supplies for your upcoming demonstration. Unfortunately, I must inform you that we currently do not have any of the requested items in stock:
+
+- **A4 white paper**: Out of stock
+- **A3 colored paper (assorted colors)**: Out of stock
+- **Cardboard for signage**: Out of stock
+
+As a result, I am unable to generate a quote or process your order at this time. If you have alternative items in mind or if you would like to explore other options, please let me know, and I would be happy to assist you further. 
+
+Thank you for your understanding, and I hope to hear from you soon!"
+16,2025-04-13,51497.799999999996,4755.049999999999,"Thank you for your request for supplies for your assembly event. Unfortunately, I must inform you that we currently do not have any of the requested items in stock:
+
+- **A4 printer paper**: 0 units available
+- **Colorful construction paper**: 0 units available
+- **Poster board**: 0 units available
+
+As a result, I am unable to fulfill your order at this time. If you have alternative items in mind or if you would like assistance with anything else, please let me know!"
+17,2025-04-14,51547.799999999996,4705.049999999999,"Dear Restaurant Manager,
+
+Thank you for reaching out regarding your upcoming reception! We are pleased to confirm your order for the following items:
+
+- **500 biodegradable paper plates**  
+  **Total Price:** $47.50 (after a 5% bulk discount)
+
+Unfortunately, we were unable to fulfill the following items as they are currently out of stock:
+- 1000 sheets of A4 white printer paper
+- 500 sheets of A3 colored paper (assorted colors)
+- 2000 table napkins (white)
+- 1000 paper cups (biodegradable)
+
+If you would like, we can assist you in reordering these out-of-stock items. 
+
+Your order of paper plates is expected to be delivered by **April 18, 2025**. 
+
+Thank you for choosing Beaver's Choice Paper Company! If you have any further questions or need assistance, please feel free to reach out.
+
+Best regards,  
+[Your Name]  
+Customer Service Orchestrator  
+Beaver's Choice Paper Company"
+18,2025-04-14,51547.799999999996,4705.049999999999,"Dear Office Manager,
+
+Thank you for reaching out regarding your upcoming ceremony. I appreciate your interest in our paper supplies.
+
+Unfortunately, I must inform you that all the items you requested are currently out of stock:
+
+- **High-quality white cardstock**: 500 sheets
+- **Standard printing paper**: 1000 sheets
+- **Colored paper in assorted colors**: 200 sheets
+
+As a result, we are unable to fulfill your order at this time. I recommend checking back with us later or considering alternative options for your paper needs.
+
+If you have any other questions or require further assistance, please feel free to reach out.
+
+Best regards,
+
+[Your Name]  
+Customer Service Orchestrator  
+Beaver's Choice Paper Company"
+19,2025-04-15,51547.799999999996,4705.049999999999,"Dear City Hall Clerk,
+
+Thank you for reaching out regarding your upcoming exhibition. I appreciate your interest in our paper supplies.
+
+Unfortunately, I must inform you that all the items you requested are currently out of stock:
+
+- **A4 glossy paper**: 0 units available
+- **A3 matte paper**: 0 units available
+- **Cardstock in assorted colors**: 0 units available
+
+As a result, we are unable to fulfill your order at this time. If you have alternative items in mind or if you would like to explore other options, please let me know, and I would be happy to assist you further.
+
+Thank you for your understanding, and I hope to hear from you soon!
+
+Best regards,
+
+[Your Name]  
+Beaver's Choice Paper Company"
+20,2025-04-17,51547.799999999996,4705.049999999999,"Thank you for reaching out regarding your order for the upcoming concert. I appreciate your interest in our paper supplies.
+
+Unfortunately, I must inform you that we currently do not have any stock available for the items you requested:
+- **Flyers**: 0 units (OUT OF STOCK)
+- **Posters**: 0 units (OUT OF STOCK)
+- **Tickets**: 0 units (OUT OF STOCK)
+
+As a result, we are unable to fulfill your order at this time. I recommend checking back with us later or considering alternative options for your paper supply needs.
+
+If you have any other questions or need assistance with different items, please feel free to ask. Thank you for your understanding, and I wish you the best with your concert preparations!"
