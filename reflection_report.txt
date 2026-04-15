@@ -1,0 +1,218 @@
+Beaver's Choice Paper Company — Multi-Agent System
+Reflection Report
+=====================================================
+
+1. AGENT WORKFLOW DIAGRAM EXPLANATION
+======================================
+
+The system uses four agents arranged in a hub-and-spoke pattern, with the
+OrchestratorAgent at the centre coordinating three specialist worker agents.
+The maximum of five agents is respected (four are used).
+
+Agent Roles
+-----------
+
+OrchestratorAgent
+  The single point of contact for all customer requests. It receives the raw
+  customer text, delegates sub-tasks to the three worker agents in a fixed
+  sequence, and synthesises their outputs into a professional customer-facing
+  reply. Crucially, it never touches the database directly — all data access
+  is handled by the workers.
+
+InventoryAgent
+  Responsible exclusively for stock-related queries and supplier reorders. It
+  exposes three tools:
+    - get_catalog       : calls get_all_inventory() to list every in-stock item
+    - check_item_stock  : calls get_stock_level() for a specific item
+    - reorder_item      : calls get_cash_balance(), get_supplier_delivery_date(),
+                          and create_transaction() to place and record a reorder
+
+QuoteAgent
+  Responsible for pricing. It exposes two tools:
+    - find_similar_quotes : calls search_quote_history() for historical context
+    - build_quote         : calls get_stock_level() and the inventory table to
+                            compute line-item prices and apply bulk discounts
+                            (5% for ≤500 units, 10% for 501-2000, 15% for >2000)
+
+SalesAgent
+  Responsible for finalising transactions and reporting. It exposes four tools:
+    - process_sale          : calls get_stock_level() and create_transaction()
+    - get_cash_balance_info : calls get_cash_balance()
+    - get_delivery_estimate : calls get_supplier_delivery_date()
+    - get_financial_summary : calls generate_financial_report()
+
+Orchestration Sequence
+-----------------------
+
+Every request follows this fixed four-step sequence:
+  Step 1 → ask_inventory_agent  (catalogue lookup + stock check)
+  Step 2 → ask_quote_agent      (price quote with discount)
+  Step 3 → ask_sales_agent      (record transactions if stock available)
+  Step 4 → compose customer response
+
+This linear sequence ensures that quoting never happens without a prior stock
+check, and sales are never recorded without a prior valid quote.
+
+Why This Architecture
+---------------------
+
+A hub-and-spoke design was chosen over a flat multi-agent mesh for three
+reasons:
+  1. Separation of concerns — each worker owns exactly one business domain
+     (inventory, pricing, or sales), making the code easier to test and extend.
+  2. Single orchestration point — the Orchestrator is the only agent that
+     decides the sequence of operations, preventing race conditions or
+     conflicting tool calls.
+  3. Managed-agent pattern — workers are exposed to the Orchestrator as plain
+     Python callables (shims), meaning the Orchestrator's tool-calling loop
+     treats delegation to a worker identically to any other tool call. This
+     avoids the need for a separate message bus or inter-agent protocol.
+
+All seven required helper functions from the starter code are used:
+  create_transaction        → reorder_item, process_sale
+  get_all_inventory         → get_catalog
+  get_stock_level           → check_item_stock, build_quote, process_sale
+  get_supplier_delivery_date→ reorder_item, get_delivery_estimate
+  get_cash_balance          → get_cash_balance_info, reorder_item
+  generate_financial_report → get_financial_summary
+  search_quote_history      → find_similar_quotes
+
+
+2. EVALUATION RESULTS (test_results.csv)
+=========================================
+
+The system was evaluated against all 20 requests in quote_requests_sample.csv.
+Results are stored in test_results.csv.
+
+Summary of outcomes
+-------------------
+
+  Requests with at least one item fulfilled : 11 out of 20
+  Requests fully out-of-stock              :  9 out of 20
+  Requests resulting in cash balance change: 11 out of 20
+
+Opening state  : Cash $45,059.70 | Inventory $4,940.30
+Final state    : Cash $51,547.80 | Inventory $4,705.05
+Net cash gain  : +$6,488.10
+
+Selected fulfilled requests (from test_results.csv)
+-----------------------------------------------------
+
+Request 1  (office manager, ceremony, 2025-04-01)
+  Items fulfilled: A4 paper (200), Cardstock (100), Colored paper (100)
+  Total: $33.25 after 5% bulk discount. Cash increased.
+
+Request 5  (school teacher, party, 2025-04-05)
+  Items fulfilled: Colored paper (500), Cardstock (300)
+  Total: $85.50 after 10% bulk discount (800 units total). Cash increased.
+
+Request 7  (business owner, exhibition, 2025-04-07)
+  Items fulfilled: Glossy paper (500)
+  Total: $95.00 after 5% discount. Cash increased.
+
+Request 10 (business owner, show, 2025-04-08)
+  Items fulfilled: Glossy paper (87) after reorder of stock
+  Demonstrates the reorder → sale workflow end-to-end. Cash increased.
+
+Request 17 (restaurant manager, reception, 2025-04-14)
+  Items fulfilled: Paper plates (500)
+  Total: $47.50. Other requested items (napkins, cups) correctly flagged
+  as out of stock.
+
+Identified Strengths
+--------------------
+
+Strength 1 — Partial fulfilment handling
+  The system does not reject an entire order just because some items are
+  out of stock. It quotes and sells whatever IS available and clearly
+  explains to the customer which items could not be fulfilled and why.
+  This mirrors real-world sales practice and protects revenue.
+
+Strength 2 — Discount logic applied correctly
+  All fulfilled quotes correctly applied the tiered bulk discount based on
+  total units across all line items, not per item. The 10% tier was
+  triggered correctly for Request 5 (800 total units) while smaller orders
+  received the 5% tier. This encourages larger orders as intended.
+
+Strength 3 — Financial state consistency
+  Cash and inventory values update consistently across the 20 requests.
+  The system never records a sale without first verifying stock availability,
+  preventing negative inventory.
+
+Strength 4 — Transparent customer communication
+  Every response includes the items ordered, quantities, total price, discount
+  applied, delivery date, and a clear explanation for any unfulfilled items.
+  Internal costs, margins, and system errors are never exposed.
+
+Unfulfilled requests — reasons
+-------------------------------
+
+9 requests could not be fulfilled because the customer's described items
+(e.g., "A4 glossy paper", "poster board", "balloons") did not match any
+catalogue item that had stock > 0 on the request date. This is expected
+behaviour — the inventory covers only 40% of the full catalogue (18 items
+seeded with 200-800 units each), and high-volume early orders rapidly
+depleted those stocks.
+
+
+3. SUGGESTIONS FOR FURTHER IMPROVEMENT
+=======================================
+
+Suggestion 1 — Add a dedicated ReorderAgent for proactive inventory management
+-------------------------------------------------------------------------------
+Currently, reorders are only placed reactively when a customer requests an
+item and the InventoryAgent notices stock is low. A dedicated ReorderAgent
+running as a background process (triggered after each sale) would monitor
+all items and automatically reorder any item whose stock falls below its
+minimum_stock_level threshold. This would prevent the cascade of "out of
+stock" responses seen from Request 8 onwards in the evaluation, where
+early high-volume sales depleted items that later customers needed.
+
+Implementation sketch:
+  - After each sale, trigger ReorderAgent.run(date)
+  - It calls get_all_inventory() and compares each item's stock to its
+    min_stock_level in the inventory table
+  - For each item below threshold, calls reorder_item() automatically
+  - Logs the reorder in transactions so the financial report stays accurate
+
+Suggestion 2 — Incorporate customer history for personalised discounts
+-----------------------------------------------------------------------
+The current discount policy applies a fixed tier based solely on order
+volume. A better system would use search_quote_history() to identify
+returning customers (by job type or event type) and offer loyalty discounts
+on top of the bulk discount. For example, a customer who has placed three
+or more previous orders could receive an additional 2% discount. This would
+improve customer retention and increase average order value.
+
+Implementation sketch:
+  - In build_quote, after computing the bulk discount, call
+    search_quote_history([job_type, event_type], limit=10)
+  - Count distinct previous orders
+  - If count >= 3, apply an additional 2% loyalty discount
+  - Mention the loyalty discount explicitly in the customer response
+
+Suggestion 3 — Add a Business Advisor Agent
+--------------------------------------------
+A fifth agent (within the five-agent limit) could analyse completed
+transactions across all 20 requests and surface actionable insights to
+the company — for example, identifying which items sell fastest, which
+are chronically out of stock, and which customer segments generate the
+most revenue. This agent would use generate_financial_report() and
+search_quote_history() to produce a weekly business summary.
+
+
+4. CONCLUSION
+=============
+
+The implemented multi-agent system successfully demonstrates the key
+capabilities required: inventory tracking, intelligent quoting with bulk
+discounts, sales transaction management, and professional customer
+communication. The hub-and-spoke architecture with a central
+OrchestratorAgent provides a clean separation of concerns and a clear
+orchestration sequence. The evaluation results confirm that the system
+handles both successful fulfilments and out-of-stock scenarios correctly,
+maintaining financial consistency throughout.
+
+The two primary areas for improvement — proactive reordering and
+personalised discounts — are both achievable within the existing
+architecture with modest additions to the codebase.
